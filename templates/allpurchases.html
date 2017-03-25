@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+    
+
+    <div>
+        <h2>Purchases Record</h2>
+        {% if products %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>product ID</th>
+                    <th>UUID</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for t in products %}
+                    
+                        <tr class="danger">
+                            <td id="center">{{ t.product_id }}</td>
+                            <td>{{ t.uuid }}</td>
+                            <td>
+                                {{t.email}}
+                            </td>
+                        </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <h3 class="text-info">No record found</h3>
+        {% endif %}
+
+    </div>
+{% endblock %}
+

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+    <form class="input-group" action="/add" method="post">
+    Name:<input id="id_name" name="name"></input>
+    Price:<input id="id_price" name="price"></input>
+    <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Add</button>
+    </span>
+    </form>
+    
+
+    <div>
+        <h2>Product List</h2>
+        {% if products %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>operation</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for t in products %}
+                    {% if t.status == 0 %}
+                        <tr class="info">
+                            <td>{{ t.name }}</td>
+                            <td>{{ t.price }}</td>
+                            <td>
+                                <a href="/buy/{{ t.id }}" class="btn btn-primary">Buy</a>
+                                <a href="/delete/{{ t.id }}" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr class="danger">
+                            <td id="center">{{ t.name }}</td>
+                            <td>{{ t.price }}</td>
+                            <td>
+                                <a href="/buy/{{ t.id }}" class="btn btn-primary">Buy</a>
+                                <a href="/delete/{{ t.id }}" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <h3 class="text-info">No products, please add</h3>
+        {% endif %}
+
+    </div>
+{% endblock %}
+

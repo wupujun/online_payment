@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+You selected {{ product.name}},  price: {{product.price}}
+
+
+<form action="/post_buy" method="POST">
+
+<script
+  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="pk_test_1td2HT5BPGVuPH16hdu38ySR"
+  data-amount="{{ product.price *100 }}"
+  data-name=" {{ product.name }}"
+  data-description="You will buy {{ product.name }}"
+  data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+  data-locale="auto"
+  data-zip-code="false"
+  data-currency="eur">
+</script>
+
+<input type="hidden" name="product_id" value="{{ product.id }}" />
+<input type="hidden" name="product_price" value="{{ product.price *100 }}" />
+</form>
+
+{% endblock %}
