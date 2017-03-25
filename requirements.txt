@@ -1,0 +1,15 @@
+blinker==1.4
+chardet==2.3.0
+click==6.7
+Flask==0.12
+Flask-Mail==0.9.1
+Flask-SQLAlchemy==2.2
+itsdangerous==0.24
+Jinja2==2.9.5
+MarkupSafe==1.0
+pdf-table-extract==0.1
+pycurl==7.19.5
+requests==2.13.0
+SQLAlchemy==1.1.6
+stripe==1.51.0
+Werkzeug==0.12.1
