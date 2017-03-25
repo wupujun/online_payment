@@ -112,7 +112,7 @@ def post_buy():
             )
     db.session.add(purchase)
     db.session.commit()
-    print 'Everything is OK, start sending mail!'
+    print 'Everything is OK!'
 
 
     return redirect('/allpurchases')

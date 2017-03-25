@@ -1,5 +1,5 @@
 A demo for online payment. It's based on python, Flask and stripe.
-Input test card no 4242 4242 4242 for testing.
+Take test card no 4242 4242 4242 4242 for testing.
 Credit:
  
 1. https://github.com/defshine/awesome-flask-todo
